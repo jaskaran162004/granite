@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products – Guru Granite</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-primary: #0d0e10;
+      --bg-card:    #16181d;
+      --accent:     #ff4d5a;
+      --glass:      rgba(255,255,255,.08);
+      --text-primary: #ffffff;
+      --text-muted:   #b3b3b3;
+      --radius:   12px;
+      --transition: .3s ease;
+      --font: 'Inter', sans-serif;
+    }
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{background:var(--bg-primary);color:var(--text-primary);font-family:var(--font);line-height:1.6;}
+    a{color:inherit;text-decoration:none;}
+    .navbar{position:sticky;top:0;background:var(--glass);backdrop-filter:blur(12px);padding:.8rem 1rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,.06);z-index:10;}
+    .navbar a{margin-left:1.5rem;font-weight:500;transition:color var(--transition);} .navbar a:hover{color:var(--accent);}
+    .container{width:min(1200px,96%);margin:auto;padding:2rem 0;}
+    h2{font-size:2rem;margin:2rem 0 1rem;position:relative;}
+    h2::after{content:"";position:absolute;left:0;bottom:-6px;width:60px;height:3px;background:var(--accent);border-radius:var(--radius);}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:2rem;}
+    .card{background:var(--bg-card);border-radius:var(--radius);overflow:hidden;box-shadow:0 8px 15px rgba(0,0,0,.2);backdrop-filter:blur(8px);transition:var(--transition);}
+    .card:hover{transform:translateY(-8px);}
+    .card img{width:100%;height:200px;object-fit:cover;}
+    .info{padding:1rem;}
+    .title{font-weight:600;margin-bottom:.4rem;}
+    .desc{color:var(--text-muted);font-size:.9rem;}
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div><strong>Guru Granite</strong></div>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="product.html">Products</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="login.html">Login</a>
+    </div>
+  </nav>
+  <main class="container">
+    <!-- BLUE -->
+    <section>
+      <h2>BLUE</h2>
+      <div class="grid">
+        <div class="card"><img src="images/BLUE/Deep%20Blue.jpg" alt="Deep Blue">
+          <div class="info"><div class="title">Deep Blue</div><div class="desc">Elegant deep‑blue marble.</div></div></div>
+        <div class="card"><img src="images/BLUE/Kingfisher%20blue.jpg" alt="Kingfisher Blue">
+          <div class="info"><div class="title">Kingfisher Blue</div><div class="desc">Vivid sky‑blue tone.</div></div></div>
+        <div class="card"><img src="images/BLUE/crystal_blue.jpg" alt="Crystal Blue">
+          <div class="info"><div class="title">Crystal Blue</div><div class="desc">Clear, cool hue.</div></div></div>
+        <div class="card"><img src="images/BLUE/lavender.jpg" alt="Lavender">
+          <div class="info"><div class="title">Lavender</div><div class="desc">Soft purple‑blue blend.</div></div></div>
+        <div class="card"><img src="images/BLUE/romantic_blue.jpg" alt="Romantic Blue">
+          <div class="info"><div class="title">Romantic Blue</div><div class="desc">Warm, muted blue.</div></div></div>
+        <div class="card"><img src="images/BLUE/sk_blue.jpg" alt="SK Blue">
+          <div class="info"><div class="title">SK Blue</div><div class="desc">Modern deep shade.</div></div></div>
+      </div>
+    </section>
+    <!-- Black, Grey -->
+    <section>
+      <h2>Black, Grey</h2>
+      <div class="grid">
+        <div class="card"><img src="images/Black,%20Grey/Charcoal%20Grey.jpg" alt="Charcoal Grey">
+          <div class="info"><div class="title">Charcoal Grey</div><div class="desc">Deep neutral tone.</div></div></div>
+        <div class="card"><img src="images/Black,%20Grey/Diamond%20black.jpg" alt="Diamond Black">
+          <div class="info"><div class="title">Diamond Black</div><div class="desc">High‑contrast dark stone.</div></div></div>
+        <div class="card"><img src="images/Black,%20Grey/bagera%20black.webp" alt="Bagera Black">
+          <div class="info"><div class="title">Bagera Black</div><div class="desc">Rich black texture.</div></div></div>
+        <div class="card"><img src="images/Black,%20Grey/black%20marquino.webp" alt="Black Marquino">
+          <div class="info"><div class="title">Black Marquino</div><div class="desc">Elegant marquino black.</div></div></div>
+        <div class="card"><img src="images/Black,%20Grey/black%20rose.jpg" alt="Black Rose">
+          <div class="info"><div class="title">Black Rose</div><div class="desc">Soft rose‑black pattern.</div></div></div>
+        <div class="card"><img src="images/Black,%20Grey/black_forest.jpg" alt="Black Forest">
+          <div class="info"><div class="title">Black Forest</div><div class="desc">Deep forest‑like black.</div></div></div>
+        <div class="card"><img src="images/Black,%20Grey/black_galaxy%20small%20flower.jpg" alt="Black Galaxy Small Flower">
+          <div class="info"><div class="title">Black Galaxy Small Flower</div><div class="desc">Star‑like specks.</div></div></div>
+        <div class="card"><img src="images/Black,%20Grey/black_galaxy_big%20flower.jpg" alt="Black Galaxy Big Flower">
+          <div class="info"><div class="title">Black Galaxy Big Flower</div><div class="desc">Bold floral galaxy.</div></div></div>
+        <div class="card"><img src="images/Black,%20Grey/black_pearl.jpg" alt="Black Pearl">
+          <div class="info"><div class="title">Black Pearl</div><div class="desc">Lustrous dark pearl.</div></div></div>
+        <div class="card"><img src="images/Black,%20Grey/cats_eye.jpg" alt="Cats Eye">
+          <div class="info"><div class="title">Cats Eye</div><div class="desc">Mysterious eye pattern.</div></div></div>
+        <div class="card"><img src="images/Black,%20Grey/coin_black.jpg" alt="Coin Black">
+          <div class="info"><div class="title">Coin Black</div><div class="desc">Metallic black coin.</div></div></div>
+        <div class="card"><img src="images/Black,%20Grey/impala_black.jpg" alt="Impala Black">
+          <div class="info"><div class="title">Impala Black</div><div class="desc">Graceful dark impala.</div></div></div>
+        <div class="card"><img src="images/Black,%20Grey/luxury%20black.JPG" alt="Luxury Black">
+          <div class="info"><div class="title">Luxury Black</div><div class="desc">Premium luxury finish.</div></div></div>
+        <div class="card"><img src="images/Black,%20Grey/river_black.jpg" alt="River Black">
+          <div class="info"><div class="title">River Black</div><div class="desc">Flowing dark river.</div></div></div>
+        <div class="card"><img src="images/Black,%20Grey/steel_grey.jpg" alt="Steel Grey">
+          <div class="info"><div class="title">Steel Grey</div><div class="desc">Industrial steel hue.</div></div></div>
+        <div class="card"><img src="images/Black,%20Grey/white%20dots%20black.jpg" alt="White Dots Black">
+          <div class="info"><div class="title">White Dots Black</div><div class="desc">Speckled contrast.</div></div></div>
+      </div>
+    </section>
+    <!-- GOLD -->
+    <section>
+      <h2>GOLD</h2>
+      <div class="grid">
+        <div class="card"><img src="images/GOLD/IMG_0169.PNG" alt="IMG 0169">
+          <div class="info"><div class="title">IMG 0169</div><div class="desc">Golden texture.</div></div></div>
+        <div class="card"><img src="images/GOLD/astoria.jpg" alt="Astoria">
+          <div class="info"><div class="title">Astoria</div><div class="desc">Rich gold finish.</div></div></div>
+        <div class="card"><img src="images/GOLD/beige_castle.jpg" alt="Beige Castle">
+          <div class="info"><div class="title">Beige Castle</div><div class="desc">Warm golden stone.</div></div></div>
+        <div class="card"><img src="images/GOLD/colonial_gold.jpg" alt="Colonial Gold">
+          <div class="info"><div class="title">Colonial Gold</div><div class="desc">Heritage gold hue.</div></div></div>
+        <div class="card"><img src="images/GOLD/gold_dust.jpg" alt="Gold Dust">
+          <div class="info"><div class="title">Gold Dust</div><div class="desc">Fine golden particles.</div></div></div>
+        <div class="card"><img src="images/GOLD/golden%20forrest.JPG" alt="Golden Forrest">
+          <div class="info"><div class="title">Golden Forrest</div><div class="desc">Sun‑kissed forest.</div></div></div>
+        <div class="card"><img src="images/GOLD/ivory_brown.jpg" alt="Ivory Brown">
+          <div class="info"><div class="title">Ivory Brown</div><div class="desc">Soft ivory‑brown blend.</div></div></div>
+        <div class="card"><img src="images/GOLD/jaggery_gold.jpg" alt="Jaggery Gold">
+          <div class="info"><div class="title">Jaggery Gold</div><div class="desc">Sweet golden tone.</div></div></div>
+        <div class="card"><img src="images/GOLD/jubilee_rich.jpg" alt="Jubilee Rich">
+          <div class="info"><div class="title">Jubilee Rich</div><div class="desc">Rich celebratory gold.</div></div></div>
+        <div class="card"><img src="images/GOLD/shiva_gold.jpg" alt="Shiva Gold">
+          <div class="info"><div class="title">Shiva Gold</div><div class="desc">Divine golden aura.</div></div></div>
+      </div>
+    </section>
+    <!-- Green -->
+    <section>
+      <h2>Green</h2>
+      <div class="grid">
+        <div class="card"><img src="images/Green/Emerald%20Marble.jpg" alt="Emerald Marble">
+          <div class="info"><div class="title">Emerald Marble</div><div class="desc">Vivid emerald shade.</div></div></div>
+        <div class="card"><img src="images/Green/aqua_green.jpg" alt="Aqua Green">
+          <div class="info"><div class="title">Aqua Green</div><div class="desc">Fresh aqua hue.</div></div></div>
+        <div class="card"><img src="images/Green/asian_green.jpg" alt="Asian Green">
+          <div class="info"><div class="title">Asian Green</div><div class="desc">Deep forest green.</div></div></div>
+        <div class="card"><img src="images/Green/green%20marble.PNG" alt="Green Marble">
+          <div class="info"><div class="title">Green Marble</div><div class="desc">Classic green marble.</div></div></div>
+        <div class="card"><img src="images/Green/green_sparkle.jpg" alt="Green Sparkle">
+          <div class="info"><div class="title">Green Sparkle</div><div class="desc">Sparkling green texture.</div></div></div>
+        <div class="card"><img src="images/Green/hassan_green.jpg" alt="Hassan Green">
+          <div class="info"><div class="title">Hassan Green</div><div class="desc">Rich natural green.</div></div></div>
+        <div class="card"><img src="images/Green/navy%20green%20waterfall.JPG" alt="Navy Green Waterfall">
+          <div class="info"><div class="title">Navy Green Waterfall</div><div class="desc">Deep waterfall green.</div></div></div>
+        <div class="card"><img src="images/Green/peacock_green.jpg" alt="Peacock Green">
+          <div class="info"><div class="title">Peacock Green</div><div class="desc">Vibrant peacock hue.</div></div></div>
+        <div class="card"><img src="images/Green/pebbles.JPG" alt="Pebbles">
+          <div class="info"><div class="title">Pebbles</div><div class="desc">Textured stone.</div></div></div>
+        <div class="card"><img src="images/Green/pista%20green.jpg" alt="Pista Green">
+          <div class="info"><div class="title">Pista Green</div><div class="desc">Soft pistachio shade.</div></div></div>
+        <div class="card"><img src="images/Green/texture%20surface.JPG" alt="Texture Surface">
+          <div class="info"><div class="title">Texture Surface</div><div class="desc">Fine texture.</div></div></div>
+      </div>
+    </section>
+    <!-- Red, Brown, Maroon -->
+    <section>
+      <h2>Red, Brown, Maroon</h2>
+      <div class="grid">
+        <div class="card"><img src="images/Red,%20Brown,%20Maroon/Cheeta%20Brown.jpg" alt="Cheeta Brown">
+          <div class="info"><div class="title">Cheeta Brown</div><div class="desc">Warm cheetah brown.</div></div></div>
+        <div class="card"><img src="images/Red,%20Brown,%20Maroon/asian%20top.jpg" alt="Asian Top">
+          <div class="info"><div class="title">Asian Top</div><div class="desc">Rich reddish top.</div></div></div>
+        <div class="card"><img src="images/Red,%20Brown,%20Maroon/boss_paradise.jpg" alt="Boss Paradise">
+          <div class="info"><div class="title">Boss Paradise</div><div class="desc">Deep paradise hue.</div></div></div>
+        <div class="card"><img src="images/Red,%20Brown,%20Maroon/cats%20eye.jpg" alt="Cats Eye">
+          <div class="info"><div class="title">Cats Eye</div><div class="desc">Bright cat‑eye pattern.</div></div></div>
+        <div class="card"><img src="images/Red,%20Brown,%20Maroon/colombo.PNG" alt="Colombo">
+          <div class="info"><div class="title">Colombo</div><div class="desc">City inspired tone.</div></div></div>
+        <div class="card"><img src="images/Red,%20Brown,%20Maroon/colombo.jpg" alt="Colombo JPG">
+          <div class="info"><div class="title">Colombo JPG</div><div class="desc">Same palette, JPG.</div></div></div>
+        <div class="card"><img src="images/Red,%20Brown,%20Maroon/himalayan_brown.jpg" alt="Himalayan Brown">
+          <div class="info"><div class="title">Himalayan Brown</div><div class="desc">Mountain brown.</div></div></div>
+        <div class="card"><img src="images/Red,%20Brown,%20Maroon/lakha_red.jpg" alt="Lakha Red">
+          <div class="info"><div class="title">Lakha Red</div><div class="desc">Vivid red stone.</div></div></div>
+        <div class="card"><img src="images/Red,%20Brown,%20Maroon/multi%20red.jpg" alt="Multi Red">
+          <div class="info"><div class="title">Multi Red</div><div class="desc">Complex red patterns.</div></div></div>
+        <div class="card"><img src="images/Red,%20Brown,%20Maroon/red_purpory_CHECKSPELLING.jpg" alt="Red Purpory">
+          <div class="info"><div class="title">Red Purpory</div><div class="desc">Red‑purple blend.</div></div></div>
+        <div class="card"><img src="images/Red,%20Brown,%20Maroon/riviera.jpg" alt="Riviera">
+          <div class="info"><div class="title">Riviera</div><div class="desc">Coastal red tone.</div></div></div>
+        <div class="card"><img src="images/Red,%20Brown,%20Maroon/swan_rose.jpg" alt="Swan Rose">
+          <div class="info"><div class="title">Swan Rose</div><div class="desc">Delicate pink‑brown.</div></div></div>
+        <div class="card"><img src="images/Red,%20Brown,%20Maroon/tan_brown.jpg" alt="Tan Brown">
+          <div class="info"><div class="title">Tan Brown</div><div class="desc">Soft tan hue.</div></div></div>
+        <div class="card"><img src="images/Red,%20Brown,%20Maroon/wooden.PNG" alt="Wooden">
+          <div class="info"><div class="title">Wooden</div><div class="desc">Rich wood texture.</div></div></div>
+      </div>
+    </section>
+    <!-- White -->
+    <section>
+      <h2>White</h2>
+      <div class="grid">
+        <div class="card"><img src="images/White/China%20white.PNG" alt="China White">
+          <div class="info"><div class="title">China White</div><div class="desc">Pure porcelain white.</div></div></div>
+        <div class="card"><img src="images/White/Era%20white.PNG" alt="Era White">
+          <div class="info"><div class="title">Era White</div><div class="desc">Timeless white.</div></div></div>
+        <div class="card"><img src="images/White/IMG_5124.jpg" alt="IMG 5124">
+          <div class="info"><div class="title">IMG 5124</div><div class="desc">Bright white stone.</div></div></div>
+        <div class="card"><img src="images/White/burgundy_white.jpg" alt="Burgundy White">
+          <div class="info"><div class="title">Burgundy White</div><div class="desc">Soft burgundy‑white mix.</div></div></div>
+        <div class="card"><img src="images/White/chida_white.jpg" alt="Chida White">
+          <div class="info"><div class="title">Chida White</div><div class="desc">Elegant white hue.</div></div></div>
+        <div class="card"><img src="images/White/diana_white.jpg" alt="Diana White">
+          <div class="info"><div class="title">Diana White</div><div class="desc">Classic white finish.</div></div></div>
+        <div class="card"><img src="images/White/fantasy_white.jpg" alt="Fantasy White">
+          <div class="info"><div class="title">Fantasy White</div><div class="desc">Dreamy white shade.</div></div></div>
+        <div class="card"><img src="images/White/gelatic%20white.jpg" alt="Gelatic White">
+          <div class="info"><div class="title">Gelatic White</div><div class="desc">Smooth gel‑like white.</div></div></div>
+        <div class="card"><img src="images/White/ice_white.jpg" alt="Ice White">
+          <div class="info"><div class="title">Ice White</div><div class="desc">Cool icy tone.</div></div></div>
+        <div class="card"><img src="images/White/maharaja%20white.jpg" alt="Maharaja White">
+          <div class="info"><div class="title">Maharaja White</div><div class="desc">Regal white stone.</div></div></div>
+        <div class="card"><img src="images/White/moon%20white.jpg" alt="Moon White">
+          <div class="info"><div class="title">Moon White</div><div class="desc">Lunar soft white.</div></div></div>
+        <div class="card"><img src="images/White/paravati%20white.jpg" alt="Paravati White">
+          <div class="info"><div class="title">Paravati White</div><div class="desc">Elegant ivory.</div></div></div>
+        <div class="card"><img src="images/White/river%20white.jpg" alt="River White">
+          <div class="info"><div class="title">River White</div><div class="desc">Flowing white.</div></div></div>
+        <div class="card"><img src="images/White/s_white_CLARIFYNAME.jpg" alt="S White">
+          <div class="info"><div class="title">S White</div><div class="desc">Clarified white texture.</div></div></div>
+        <div class="card"><img src="images/White/snow%20white.jpg" alt="Snow White">
+          <div class="info"><div class="title">Snow White</div><div class="desc">Pure snow hue.</div></div></div>
+        <div class="card"><img src="images/White/star_white1.jpg" alt="Star White">
+          <div class="info"><div class="title">Star White</div><div class="desc">Starlit white.</div></div></div>
+        <div class="card"><img src="images/White/star_white_DUPLICATE.jpg" alt="Star White Duplicate">
+          <div class="info"><div class="title">Star White Duplicate</div><div class="desc">Duplicate version.</div></div></div>
+        <div class="card"><img src="images/White/supreme%20white.jpg" alt="Supreme White">
+          <div class="info"><div class="title">Supreme White</div><div class="desc">Supreme brightness.</div></div></div>
+        <div class="card"><img src="images/White/white%20fantacy.jpg" alt="White Fantacy">
+          <div class="info"><div class="title">White Fantacy</div><div class="desc">Fantasy white texture.</div></div></div>
+        <div class="card"><img src="images/White/white%20pearl.jpg" alt="White Pearl">
+          <div class="info"><div class="title">White Pearl</div><div class="desc">Pearlescent white.</div></div></div>
+        <div class="card"><img src="images/White/white_galaxy.jpg" alt="White Galaxy">
+          <div class="info"><div class="title">White Galaxy</div><div class="desc">Galaxy‑inspired white.</div></div></div>
+      </div>
+    </section>
+  </main>
+<script>
+document.querySelectorAll('.card').forEach(card=>{
+  card.style.cursor='pointer';
+  card.addEventListener('click',()=>{
+    const title = card.querySelector('.title')?.textContent?.trim()||'product';
+    const query = encodeURIComponent(title);
+    window.location.href = `product-details.html?product=${query}`;
+  });
+});
+</script>
+</body>
+</html>

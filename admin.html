@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guru Granite - Admin Panel</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/admin.css">
+    <script src="js/admin.js"></script>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+
+        <div class="logo">
+            Guru Granite Admin
+        </div>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="#dashboard">Dashboard</a>
+            <a href="#products">Products</a>
+            <a href="login.html">Logout</a>
+        </nav>
+
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <!-- Dashboard -->
+        <section class="card" id="dashboard">
+
+            <h2>Dashboard Overview</h2>
+
+            <div class="stats">
+
+                <div class="stat-box">
+                    <h3 id="totalProducts">0</h3>
+                    <p>Total Products</p>
+                </div>
+
+                <div class="stat-box">
+                    <h3 id="totalReviews">0</h3>
+                    <p>Total Reviews</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Add Product -->
+        <section class="card" id="products">
+
+            <h2>Add / Edit Product</h2>
+
+            <form id="productForm">
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Product Name"
+                    required
+                >
+
+                <select id="category" required>
+                    <option value="" disabled selected>Select Category</option>
+                    <option value="BLUE">BLUE</option>
+                    <option value="Black, Grey">Black, Grey</option>
+                    <option value="GOLD">GOLD</option>
+                    <option value="Green">Green</option>
+                    <option value="Red, Brown, Maroon">Red, Brown, Maroon</option>
+                    <option value="White">White</option>
+                </select>
+
+                <input
+                    type="file"
+                    id="image"
+                    accept="image/*"
+                >
+
+                <textarea
+                    id="description"
+                    rows="5"
+                    placeholder="Product Description"
+                    required
+                ></textarea>
+
+                <input
+                    type="number"
+                    id="reviews"
+                    placeholder="Reviews Count"
+                    required
+                >
+
+                <button type="submit">
+                    Add Product
+                </button>
+
+            </form>
+
+        </section>
+
+        <!-- Products List -->
+        <section class="card">
+
+            <div class="table-header">
+
+                <h2>Products List</h2>
+
+                <button
+                    class="delete-btn"
+                    onclick="clearAllProducts()"
+                >
+                    Clear All
+                </button>
+
+            </div>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>S.No</th>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Description</th>
+                        <th>Reviews</th>
+                        <th>Actions</th>
+                    </tr>
+
+                </thead>
+
+                <tbody id="productsTable">
+                    <!-- Products added by JS -->
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+    
+
+</body>
+</html>
+

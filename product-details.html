@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Details – Guru Granite</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-primary: #0d0e10;
+      --bg-secondary: #090a0c;
+      --bg-card: rgba(255, 255, 255, 0.02);
+      --bg-card-border: rgba(255, 255, 255, 0.05);
+      --text-primary: #ffffff;
+      --text-secondary: #b3b3b3;
+      --text-muted: #888;
+      --navbar-bg: rgba(30, 30, 33, 0.75);
+      --navbar-border: rgba(255, 255, 255, 0.1);
+      --accent: #00f0ff;
+      --radius-lg: 20px;
+      --radius-md: 12px;
+      --font: 'Inter', sans-serif;
+      --transition: .3s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    body.light-theme {
+      --bg-primary: #f4f5f7;
+      --bg-secondary: #e8eaed;
+      --bg-card: rgba(0, 0, 0, 0.02);
+      --bg-card-border: rgba(0, 0, 0, 0.08);
+      --text-primary: #111111;
+      --text-secondary: #555555;
+      --text-muted: #888;
+      --navbar-bg: rgba(255, 255, 255, 0.82);
+      --navbar-border: rgba(0, 0, 0, 0.1);
+      --accent: #0099cc;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: var(--font);
+    }
+
+    body {
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      transition: background-color 0.4s ease, color 0.4s ease;
+      padding-bottom: 100px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Premium Glassmorphic Header */
+    .navbar {
+      position: sticky;
+      top: 0;
+      background: var(--navbar-bg);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--navbar-border);
+      padding: 16px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.25rem;
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-links a {
+      color: var(--text-secondary);
+      margin-left: 24px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: color var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    /* Container layout */
+    .container {
+      width: min(1200px, 92%);
+      margin: auto;
+      padding-top: 30px;
+    }
+
+    /* Action bar / Breadcrumb */
+    .action-bar {
+      margin-bottom: 30px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      font-weight: 600;
+      transition: color var(--transition);
+    }
+
+    .back-link:hover {
+      color: var(--accent);
+    }
+
+    /* Split column Hero detail block */
+    .hero-detail-section {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 50px;
+      align-items: flex-start;
+      margin-bottom: 80px;
+    }
+
+    @media (max-width: 991px) {
+      .hero-detail-section {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+    }
+
+    .hero-image-wrapper {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--bg-card-border);
+      background: #000;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+      position: relative;
+    }
+
+    .hero-img {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .hero-image-wrapper:hover .hero-img {
+      transform: scale(1.03);
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+    }
+
+    .category-tag {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--accent);
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+
+    .hero-title {
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      letter-spacing: -1px;
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      margin-bottom: 35px;
+    }
+
+    /* Buttons block */
+    .action-box {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .btn {
+      border: none;
+      padding: 14px 28px;
+      border-radius: var(--radius-md);
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all var(--transition);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn-purchase {
+      background: var(--accent);
+      color: #000000;
+      box-shadow: 0 0 20px rgba(0, 240, 255, 0.25);
+    }
+
+    .btn-purchase:hover {
+      background: #00c8ff;
+      box-shadow: 0 0 25px rgba(0, 240, 255, 0.45);
+      transform: translateY(-2px);
+    }
+
+    .btn-whatsapp {
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--text-primary);
+      border: 1px solid var(--bg-card-border);
+    }
+
+    .btn-whatsapp:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    /* More Products Recommended list style */
+    .more-products-section {
+      border-top: 1px solid var(--bg-card-border);
+      padding-top: 60px;
+    }
+
+    .more-products-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 30px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .more-products-title::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 60px;
+      height: 3px;
+      background: var(--accent);
+      border-radius: var(--radius-md);
+    }
+
+    .more-products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .product-card {
+      background: var(--bg-card);
+      border: 1px solid var(--bg-card-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      cursor: pointer;
+      transition: all var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--accent);
+      box-shadow: 0 10px 25px rgba(0, 240, 255, 0.15);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .card-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+      display: block;
+    }
+
+    .product-card:hover .card-img {
+      transform: scale(1.04);
+    }
+
+    .card-info {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .card-category {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .card-title {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .card-desc {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">
+      <span>🪨</span> Guru Granite
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="product.html">Products</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="action-bar">
+      <a href="product.html" class="back-link">← Back to Catalog</a>
+    </div>
+
+    <!-- Active Details Hero Card -->
+    <section class="hero-detail-section">
+      <div class="hero-image-wrapper">
+        <img id="productImg" class="hero-img" src="" alt="Product Details">
+      </div>
+      <div class="hero-content">
+        <span id="productCategory" class="category-tag">Exotic Stone</span>
+        <h1 id="productTitle" class="hero-title">Loading Details...</h1>
+        <p id="productDesc" class="hero-desc"></p>
+        
+        <div class="action-box">
+          <button class="btn btn-purchase" id="offlineBuyBtn">Request Info</button>
+          <a id="whatsappBtn" href="https://wa.me/919811782245" target="_blank" class="btn btn-whatsapp">
+            WhatsApp Inquiry
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- More Products Recommended Grid -->
+    <section class="more-products-section">
+      <h2 class="more-products-title">Other Premium Slabs</h2>
+      <div id="moreProductsGrid" class="more-products-grid"></div>
+    </section>
+  </main>
+
+  <script>
+    const categoryMap = {
+      'BLUE': 'Blue',
+      'Black, Grey': 'Black & Grey',
+      'GOLD': 'Gold',
+      'Green': 'Green',
+      'Red, Brown, Maroon': 'Red, Brown & Maroon',
+      'White': 'White'
+    };
+
+    function getReadableCategory(cat) {
+      return categoryMap[cat] || cat;
+    }
+
+    let allProducts = [];
+    let activeProduct = null;
+
+    // Load light/dark body class from main theme if toggled
+    if (localStorage.getItem('theme') === 'light' || document.body.classList.contains('light-theme')) {
+      document.body.classList.add('light-theme');
+    }
+
+    async function loadCatalog() {
+      try {
+        const response = await fetch('product.html?v=' + Date.now());
+        if (!response.ok) throw new Error('Failed to load product.html');
+        const html = await response.text();
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        
+        const sections = doc.querySelectorAll('main.container section');
+        allProducts = [];
+        
+        sections.forEach(section => {
+          const header = section.querySelector('h2');
+          if (!header) return;
+          const category = header.textContent.trim();
+          const cards = section.querySelectorAll('.grid .card');
+          cards.forEach(card => {
+            const img = card.querySelector('img');
+            const titleEl = card.querySelector('.title');
+            const descEl = card.querySelector('.desc');
+            if (img && titleEl) {
+              allProducts.push({
+                category: getReadableCategory(category),
+                img: img.getAttribute('src'),
+                title: titleEl.textContent.trim(),
+                desc: descEl ? descEl.textContent.trim() : ''
+              });
+            }
+          });
+        });
+        
+        renderPageFromUrl();
+      } catch (err) {
+        console.warn('Dynamic fetch of product.html failed. Trying fallbacks.', err);
+        // Fallback static data mapping if dynamic fetch fails (e.g. offline file:// CORS)
+        const fallbackData = [
+          { title: "Deep Blue", category: "Blue", img: "images/BLUE/Deep Blue.jpg", desc: "Elegant deep‑blue marble." },
+          { title: "Kingfisher Blue", category: "Blue", img: "images/BLUE/Kingfisher blue.jpg", desc: "Vivid sky‑blue tone." },
+          { title: "Crystal Blue", category: "Blue", img: "images/BLUE/crystal_blue.jpg", desc: "Clear, cool hue." }
+        ];
+        allProducts = fallbackData;
+        renderPageFromUrl();
+      }
+    }
+
+    function renderPageFromUrl() {
+      const params = new URLSearchParams(window.location.search);
+      const name = params.get('product') || '';
+      
+      // Locate active product
+      activeProduct = allProducts.find(p => p.title.toLowerCase() === name.toLowerCase());
+      
+      if (!activeProduct && allProducts.length > 0) {
+        // Default to first product if not specified
+        activeProduct = allProducts[0];
+      }
+
+      if (activeProduct) {
+        renderHeroDetails(activeProduct);
+        renderMoreProducts(activeProduct);
+      } else {
+        document.getElementById('productTitle').textContent = 'Product not found';
+        document.getElementById('productDesc').textContent = 'The requested product could not be found in the catalog.';
+      }
+    }
+
+    function renderHeroDetails(prod) {
+      document.title = `${prod.title} – Guru Granite`;
+      document.getElementById('productTitle').textContent = prod.title;
+      document.getElementById('productCategory').textContent = prod.category;
+      document.getElementById('productDesc').textContent = prod.desc;
+      
+      const imgEl = document.getElementById('productImg');
+      imgEl.src = prod.img;
+      imgEl.alt = prod.title;
+
+      // Update whatsapp link with product name
+      const whatsappBtn = document.getElementById('whatsappBtn');
+      if (whatsappBtn) {
+        whatsappBtn.href = `https://wa.me/919811782245?text=Hello%20Guru%20Granite,%20I%20am%20interested%20in%20learning%20more%20about%20your%20slab%20%22${encodeURIComponent(prod.title)}%22`;
+      }
+    }
+
+    function renderMoreProducts(activeProd) {
+      const grid = document.getElementById('moreProductsGrid');
+      if (!grid) return;
+      grid.innerHTML = '';
+      
+      // Filter out the active product
+      const remaining = allProducts.filter(p => p.title.toLowerCase() !== activeProd.title.toLowerCase());
+      
+      remaining.forEach(prod => {
+        const card = document.createElement('div');
+        card.className = 'product-card';
+        card.innerHTML = `
+          <img src="${prod.img}" alt="${prod.title}" class="card-img">
+          <div class="card-info">
+            <span class="card-category">${prod.category}</span>
+            <h3 class="card-title">${prod.title}</h3>
+            <p class="card-desc">${prod.desc}</p>
+          </div>
+        `;
+        
+        card.addEventListener('click', () => {
+          // Push state and update without hard reloads
+          const url = new URL(window.location);
+          url.searchParams.set('product', prod.title);
+          window.history.pushState({}, '', url);
+          
+          renderHeroDetails(prod);
+          renderMoreProducts(prod);
+          
+          // Scroll to top smoothly
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        grid.appendChild(card);
+      });
+    }
+
+    document.getElementById('offlineBuyBtn').addEventListener('click', () => {
+      const name = activeProduct ? activeProduct.title : 'product';
+      alert(`Your inquiry request for "${name}" has been recorded. We will contact you shortly.`);
+      console.log('Admin notification: Offline quote request for', name);
+    });
+
+    // Support browser back/forward buttons navigation
+    window.addEventListener('popstate', () => {
+      renderPageFromUrl();
+    });
+
+    loadCatalog();
+  </script>
+</body>
+</html>
